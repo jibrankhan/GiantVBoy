@@ -23,11 +23,18 @@ public class ColorBall : MonoBehaviour {
     float offset = 0.02f;
     float scale = 1;
     Transform effectObject;
+    Renderer rend;
 
     static State currentState;
     // Use this for initialization
     void Start() {
         currentState = State.Normal;
+        rend = GetComponent<Renderer>();
+        rend.material = normalMat;
+        effectObject = Instantiate(normalEffect, new Vector3(0, 0, 0), Quaternion.identity) as Transform;
+        effectObject.parent = transform;
+        effectObject.transform.position = transform.position;
+
         matChanged = false;
         animCount = 12;
         transform.localScale = new Vector3(1, 1, 1);
@@ -38,7 +45,6 @@ public class ColorBall : MonoBehaviour {
     void Update() {
         if (matChanged)
         {
-            Renderer rend = GetComponent<Renderer>();
             if (effectObject)
             {
                 Destroy(effectObject.gameObject);
