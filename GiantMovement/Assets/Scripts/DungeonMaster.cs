@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class DungeonMaster : MonoBehaviour
 { 
     private River[] rivers;
-    static public int GameState;
+    public static int GameState;
     public Titan titan;
     public Boy boy;
     public List<Transform> titanTargets;

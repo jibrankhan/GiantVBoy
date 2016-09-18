@@ -11,4 +11,8 @@
     public const string GIANT = "Giant";
     public const string GIANT_WALK_ANIMATION = "Giant-04-walk";
     public const string GREEK_GOD = "LMHeadMountedRig1";
+    public const string ANIM_BOOL_TAKE_DAMAGE = "TakeDamage";
+    public const string ANIM_BOOL_GAME_OVER = "GameOver";
+    public const string END_SCENE_NAME = "End";
+    public const string MAIN_SCENE_NAME = "Staging";
 }
