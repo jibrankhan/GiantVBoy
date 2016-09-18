@@ -85,7 +85,7 @@ public class DungeonMaster : MonoBehaviour
             {
                 if(r.tag == GlobalVariables.RIVER)
                 {
-                    r.IsActive = true;
+                    r.ActivateRiver(true);
                 }
             }
             titan.TitanTakeDamage();
