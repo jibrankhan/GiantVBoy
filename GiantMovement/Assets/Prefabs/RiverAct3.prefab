@@ -58,7 +58,7 @@ GameObject:
   - 54: {fileID: 54000010145423806}
   m_Layer: 8
   m_Name: RiverAct3
-  m_TagString: River
+  m_TagString: FinalRiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012989720156}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 1491.1, y: 13.2, z: 263.3}
+  m_LocalPosition: {x: 1776.1, y: 10, z: 259.9}
   m_LocalScale: {x: 35.00019, y: 1.3, z: 50.000275}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:

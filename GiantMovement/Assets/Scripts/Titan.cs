@@ -104,6 +104,7 @@ public class Titan : Agent {
                 // End game if damage is final
                 if (damageTaken == finalDamageResist)
                 {
+                    print("YOU LOSE");
                     Application.Quit();
                 }
             } 
