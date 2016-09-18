@@ -9,6 +9,8 @@ public class RainCollision : MonoBehaviour {
     // Use this for initialization
     void Start () {
         cloud = gameObject.transform.GetComponentInParent<CloudCollision>();
+
+
     }
 	
 	// Update is called once per frame
@@ -19,9 +21,16 @@ public class RainCollision : MonoBehaviour {
     // Update is called once per frame
     void OnCollisionEnter(Collision collider)
     {
-        // Not delete if touching player or clouds
-        if (collider.gameObject.tag != GlobalVariables.PLAYER && collider.gameObject.tag != GlobalVariables.CLOUDS && collider.gameObject.tag != GlobalVariables.RIVER)
+        // Not delete if touching player or clouds or pinch extenders
+        if (collider.gameObject.tag != GlobalVariables.PINCH_EXTENDER_LEFT && collider.gameObject.tag != GlobalVariables.PINCH_EXTENDER_RIGHT && 
+            collider.gameObject.tag != GlobalVariables.CLOUDS && collider.gameObject.tag != GlobalVariables.RIVER)
         {
+            // Allow to pass through extenders
+            if(collider.gameObject.tag == GlobalVariables.PINCH_EXTENDER_LEFT && collider.gameObject.tag == GlobalVariables.PINCH_EXTENDER_RIGHT)
+            {
+                Physics.IgnoreCollision(collider.gameObject.GetComponent<Collider>() , GetComponent<Collider>());
+            }
+
             if (gameObject != null)
             {
                 cloud.DropletDestroyed();

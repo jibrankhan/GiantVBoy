@@ -79,6 +79,7 @@ public class DungeonMaster : MonoBehaviour
         // If three rain drops have been gathered
         if(rainCounter >= 3)
         {
+            print("RIVER ACTIVATED");
             // Change river texture
             foreach(River r in rivers)
             {

@@ -72,15 +72,13 @@ GameObject:
   - 4: {fileID: 4000012881483932}
   - 198: {fileID: 198000013863311184}
   - 199: {fileID: 199000012609590572}
-  - 114: {fileID: 114000013727228174}
-  - 114: {fileID: 114000013262918608}
   m_Layer: 0
   m_Name: RainEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000011543292558
 Transform:
   m_ObjectHideFlags: 1
@@ -101,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011922733102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1471.1, y: 43.1, z: 254.4}
+  m_LocalPosition: {x: 1499, y: 54.4, z: 302.5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -131,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 1000014151863668}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -2.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012475418258}
@@ -235,7 +233,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -257,7 +255,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82000011759728532
 AudioSource:
   m_ObjectHideFlags: 1
@@ -309,7 +307,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -331,7 +329,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114000013112594946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -346,6 +344,7 @@ MonoBehaviour:
   dungeon: {fileID: 0}
   gg: {fileID: 0}
   rain: {fileID: 1000013864735600, guid: dbb1bb9798d326a40ab3c241de952dbb, type: 2}
+  rainEffect: {fileID: 1000014151863668}
   rainSounds:
   - {fileID: 8300000, guid: 6163f88e5f9894b48ae6efdd4eb9ba67, type: 3}
   - {fileID: 8300000, guid: bebb017b6eb77024081813c9f13647bd, type: 3}
@@ -356,30 +355,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 74aaa7ddf64581d4593b071ab854d4f1, type: 3}
   audio: {fileID: 82000010328087496}
   audio2: {fileID: 82000011759728532}
---- !u!114 &114000013262918608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014151863668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b94bd322eb3ab4c809702d84a1ebf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dungeon: {fileID: 0}
---- !u!114 &114000013727228174
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014151863668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b94bd322eb3ab4c809702d84a1ebf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dungeon: {fileID: 0}
 --- !u!198 &198000013863311184
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -427,7 +402,7 @@ ParticleSystem:
   randomSeed: 1111302376
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   moveWithTransform: 0
   scalingMode: 1
   InitialModule:

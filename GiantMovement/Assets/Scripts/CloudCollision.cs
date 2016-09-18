@@ -7,53 +7,49 @@ public class CloudCollision : MonoBehaviour {
     public DungeonMaster dungeon;
     public GreekGod gg;
     public GameObject rain;
+    public GameObject rainEffect;
 
     public List<AudioClip> rainSounds;
     public List<AudioClip> rainGrab;
     public AudioSource audio;
     public AudioSource audio2;
 
+    Collider extenderCollider;
     private bool beingPinched;
-    bool isRaining;
-    private ParticleSystem particleS;
+    bool rainCubeExists = false;
     
 
     void Start()
     {
-        particleS = GetComponentInChildren<ParticleSystem>();
         GameObject rig = GameObject.Find(GlobalVariables.GREEK_GOD);
         gg = rig.GetComponent<GreekGod>();
+
+        // Setup audio clips
+        audio.clip = rainSounds[Random.Range(0, rainSounds.Capacity)];
+        audio2.clip = rainGrab[Random.Range(0, rainGrab.Capacity)];
     }
 
     void OnTriggerStay(Collider collider)
     {
-        if (BeingPinched(collider) && !isRaining)
+        // While being pinched if a cube is not already made
+        if (BeingPinched(collider) && !rainCubeExists)
         {
-            //rain.transform.SetParent(transform);
             GameObject rain1 = (GameObject)Instantiate(rain, transform.localPosition, transform.localRotation, transform);
             rain1.transform.localPosition = Vector3.zero;
-            isRaining = true;
+            rainCubeExists = true;
+        }
 
-            // Only play if not already playing
-            if(!audio.clip && !audio2.isPlaying)
-            {
-                audio.clip = rainSounds[Random.Range(0, rainSounds.Capacity)];
-                audio2.clip = rainGrab[Random.Range(0, rainGrab.Capacity)];
-            }
-            
+        // Keep playing raining whilst rain cube exists
+        if (rainCubeExists)
+        {
             // Play rain sounds, only once      
             if (!audio.isPlaying)
             {
                 audio.Play();
             }
-            if (!audio2.isPlaying)
-            {
-                audio2.Play();
-            }
 
-            particleS.Play();
-            //Debug.Log(rain1.transform.position);
-            //Debug.Log(rain1.transform.localPosition);
+            rainEffect.SetActive(true);
+            //particleS.Play();
         }
     }
 
@@ -70,15 +66,35 @@ public class CloudCollision : MonoBehaviour {
 
     public void DropletDestroyed()
     {
-        isRaining = false;
+        print("droplet DESTROYED!");
+        rainCubeExists = false;
+        //particleS.Stop();
+        rainEffect.SetActive(false);
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (BeingPinched(collider))
+        {
+            extenderCollider = collider;
+
+            // Play grab sound
+            if (!audio2.isPlaying)
+            {
+                audio2.Play();
+                rainEffect.SetActive(true);
+                //particleS.Play();
+            }
+        }
     }
 
     void onTriggerExit(Collider collider)
     {
-        if (collider.tag == GlobalVariables.PINCH_EXTENDER_LEFT || collider.tag == GlobalVariables.PINCH_EXTENDER_RIGHT)
+        if (!BeingPinched(collider))
         {
-            isRaining = false;
-            particleS.Stop();
+            extenderCollider = null;
+            rainEffect.SetActive(false);
+            //particleS.Stop();
         }
     }
 
@@ -86,15 +102,14 @@ public class CloudCollision : MonoBehaviour {
     {
         return collider.tag == GlobalVariables.PINCH_EXTENDER_RIGHT && gg.IsPinchingRight || collider.tag == GlobalVariables.PINCH_EXTENDER_LEFT && gg.IsPinchingLeft;
     }
-}
 
-    /*void OnTriggerExit(Collider other)
+    void GenerateRainCube()
     {
-        if (other.tag == GlobalVariables.PINCH_EXTENDER)
+        if(!rainCubeExists)
         {
-            print("LEAVING CLOUD");
-            beingPinched = false;
-            stickObject = null;
+            GameObject rain1 = (GameObject)Instantiate(rain, transform.localPosition, transform.localRotation, transform);
+            rain1.transform.localPosition = Vector3.zero;
         }
-    }*/
+    }
+}
 
