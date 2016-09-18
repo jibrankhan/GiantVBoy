@@ -129,6 +129,11 @@ public class Titan : Agent {
         {
             inFinalWater = false;
         }
+
+        if (collider.tag == GlobalVariables.RIVER)
+        {
+            agent.speed = 7;
+        }
     }
 
     void OnTriggerStay(Collider collider)
