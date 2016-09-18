@@ -25,15 +25,6 @@ public class CloudCollision : MonoBehaviour {
         gg = rig.GetComponent<GreekGod>();
     }
 
-    // Update is called once per frame
-    /*void Update () {
-        if (stickObject != null && beingPinched)
-        {
-            print("MOVING CLOUD");
-            gameObject.transform.position = stickObject.transform.position;
-        }
-    }*/
-
     void OnTriggerStay(Collider collider)
     {
         if (BeingPinched(collider) && !isRaining)
@@ -43,9 +34,13 @@ public class CloudCollision : MonoBehaviour {
             rain1.transform.localPosition = Vector3.zero;
             isRaining = true;
 
-            audio.clip = rainSounds[Random.Range(0, rainSounds.Capacity)];
-            audio2.clip = rainGrab[Random.Range(0, rainGrab.Capacity)];
-
+            // Only play if not already playing
+            if(!audio.clip && !audio2.isPlaying)
+            {
+                audio.clip = rainSounds[Random.Range(0, rainSounds.Capacity)];
+                audio2.clip = rainGrab[Random.Range(0, rainGrab.Capacity)];
+            }
+            
             // Play rain sounds, only once      
             if (!audio.isPlaying)
             {

@@ -126,13 +126,21 @@ public class Titan : Agent {
 
     void OnTriggerStay(Collider collider)
     {
-        
+        if(collider.tag == GlobalVariables.RIVER)
+        {
+            River r = collider.GetComponent<River>();
+            if (r.IsActive)
+            {
+                agent.speed = 3;
+            }
+        }
     }
 
     public IEnumerator TitanTakeDamage()
     {
         agent.Stop();
         print(Time.time);
+        // PLAY TITAN DAMAGE ANIMATION
         yield return new WaitForSeconds(5);
         print(Time.time);
         agent.Resume();

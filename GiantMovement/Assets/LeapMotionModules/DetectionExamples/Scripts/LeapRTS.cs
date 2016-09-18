@@ -85,14 +85,14 @@ namespace Leap.Unity {
 
       if (_pinchDetectorA != null && _pinchDetectorA.IsActive && 
           _pinchDetectorB != null &&_pinchDetectorB.IsActive) {
-                print("PINCHING BOTH!");
+                //print("PINCHING BOTH!");
         //transformDoubleAnchor();
       } else if (_pinchDetectorA != null && _pinchDetectorA.IsActive) {
         //transformSingleAnchor(_pinchDetectorA);
-                print("PINCHING LEFT!");
+                //print("PINCHING LEFT!");
       } else if (_pinchDetectorB != null && _pinchDetectorB.IsActive) {
                 //transformSingleAnchor(_pinchDetectorB);
-                print("PINCHING RIGHT!");
+                //print("PINCHING RIGHT!");
       }
 
       /*if (didUpdate) {

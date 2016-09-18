@@ -23,7 +23,6 @@ public class DungeonMaster : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         rivers = FindObjectsOfType(typeof(River)) as River[];
 
         ActNumber = -1;
@@ -77,8 +76,17 @@ public class DungeonMaster : MonoBehaviour
     {
         rainCounter++;
 
+        // If three rain drops have been gathered
         if(rainCounter >= 3)
         {
+            // Change river texture
+            foreach(River r in rivers)
+            {
+                if(r.tag == GlobalVariables.RIVER)
+                {
+                    r.IsActive = true;
+                }
+            }
             titan.TitanTakeDamage();
             RequestActChange(2);
         }

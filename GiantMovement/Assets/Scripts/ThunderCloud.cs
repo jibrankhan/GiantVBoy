@@ -9,7 +9,9 @@ public class ThunderCloud : MonoBehaviour {
 
     public List<AudioClip> thunderGrab;
     public List<AudioClip> thunderSounds;
+    Collider extenderCollider;
     bool collided = false;
+    bool beingTouched = false;
 
     // Use this for initialization
     void Start () {
@@ -22,9 +24,21 @@ public class ThunderCloud : MonoBehaviour {
 	void Update () {
 
         // Only destroy cloud after sound is finished playing
-	    if(collided && !audio.isPlaying)
+        if (collided && !audio.isPlaying)
         {
             Destroy(gameObject);
+        }
+
+        if (extenderCollider != null)
+        {
+            if (BeingPinched(extenderCollider))
+            {
+                if (!audio.isPlaying)
+                {
+                    audio.clip = thunderGrab[Random.Range(0, thunderGrab.Capacity)];
+                    audio.Play();
+                }
+            }
         }
 	}
 
@@ -32,11 +46,11 @@ public class ThunderCloud : MonoBehaviour {
     {
         if(BeingPinched(collider))
         {
-            if (!audio.isPlaying)
-            { 
-                audio.clip = thunderGrab[Random.Range(0, thunderGrab.Capacity)];
-                audio.Play();
-            }
+            extenderCollider = collider;
+        }
+        else
+        {
+            extenderCollider = null;
         }
 
         if(collider.tag == GlobalVariables.GIANT)
