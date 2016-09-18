@@ -17,6 +17,9 @@ public class DungeonMaster : MonoBehaviour
     public float boyDestinationYAdjustment;
     protected bool isAct1Done, isAct2Done, isAct3Done;
 
+    public bool isTesting;
+    public int testActNumber;
+
     // Use this for initialization
     void Start()
     {
@@ -24,7 +27,12 @@ public class DungeonMaster : MonoBehaviour
         rivers = FindObjectsOfType(typeof(River)) as River[];
 
         ActNumber = -1;
-        StartAct(0);
+
+        //TESTING VARIABLES
+        if (isTesting)
+        {
+            StartAct(testActNumber);
+        }
 
         // Initial state
         GameState = 0;

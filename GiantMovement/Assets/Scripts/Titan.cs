@@ -57,7 +57,7 @@ public class Titan : Agent {
                 //}
             }
 
-            print(Vector3.Distance(transform.position, boy.transform.position));
+            //print(Vector3.Distance(transform.position, boy.transform.position));
 
             // If close to boy reset game for now   
             //if(Vector3.Distance(transform.position, boy.transform.position) < loseDistance)
@@ -94,6 +94,19 @@ public class Titan : Agent {
             {
                 StartCoroutine(TitanTakeDamage());
             }
+
+            // And this is act 2 and standing in final river
+            if (dungeon.ActNumber == 2 && inFinalWater)
+            {
+                print("DAMAGE TAKEN!");
+                // Increase damage
+                damageTaken++;
+                // End game if damage is final
+                if (damageTaken == finalDamageResist)
+                {
+                    Application.Quit();
+                }
+            } 
         }
 
         if(collider.tag == GlobalVariables.FINAL_RIVER)
@@ -112,21 +125,7 @@ public class Titan : Agent {
 
     void OnTriggerStay(Collider collider)
     {
-        // If hit by a cloud
-        if (collider.tag == GlobalVariables.THUNDER_CLOUD)
-        {
-            // And this is act 2 and standing in final river
-            if (dungeon.ActNumber == 2 && inFinalWater)
-            {
-                // Increase damage
-                damageTaken++;
-                // End game if damage is final
-                if (damageTaken == finalDamageResist)
-                {
-                    Application.Quit();
-                }
-            }
-        }
+        
     }
 
     public IEnumerator TitanTakeDamage()
