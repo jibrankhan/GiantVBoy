@@ -20,6 +20,7 @@ public class Titan : Agent {
     Animator animator;
     bool firstAnimation;
 
+    public float giantRiverResetSpeed;
     public float giantMaxSpeed;
     public float giantAccelator;
 
@@ -106,8 +107,13 @@ public class Titan : Agent {
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == GlobalVariables.THUNDER_CLOUD)
-        { 
+        print("TRIGGER ENTER TITAN");
+        print(collider.tag);
+
+        if(collider.tag == GlobalVariables.THUNDER_CLOUD || collider.tag == GlobalVariables.RUIN)
+        {
+            print("TITAN TAKE DAMAGE");
+
             StartCoroutine(TitanTakeDamage());
 
             // And this is act 2 and standing in final river
@@ -141,7 +147,27 @@ public class Titan : Agent {
 
         if (collider.tag == GlobalVariables.RIVER)
         {
-            agent.speed = 7;
+            agent.speed = agent.speed;
+        }
+
+        if (collider.tag == GlobalVariables.THUNDER_CLOUD && collider.tag == GlobalVariables.RUIN)
+        {
+            StartCoroutine(TitanTakeDamage());
+
+            // And this is act 2 and standing in final river
+            if (dungeon.ActNumber == 2 && inFinalWater)
+            {
+                print("DAMAGE TAKEN!");
+                // Increase damage
+                damageTaken++;
+                // End game if damage is final
+                if (damageTaken == finalDamageResist)
+                {
+                    print("YOU WIN!");
+                    StartCoroutine(TitanDies());
+                    Invoke("TransitionToEndScreen", 15.0f);
+                }
+            }
         }
     }
 
@@ -152,7 +178,27 @@ public class Titan : Agent {
             River r = collider.GetComponent<River>();
             if (r.IsActive)
             {
-                agent.speed = 3;
+                agent.speed = giantRiverResetSpeed;
+            }
+        }
+
+        if (collider.tag == GlobalVariables.THUNDER_CLOUD && collider.tag == GlobalVariables.RUIN)
+        {
+            StartCoroutine(TitanTakeDamage());
+
+            // And this is act 2 and standing in final river
+            if (dungeon.ActNumber == 2 && inFinalWater)
+            {
+                print("DAMAGE TAKEN!");
+                // Increase damage
+                damageTaken++;
+                // End game if damage is final
+                if (damageTaken == finalDamageResist)
+                {
+                    print("YOU WIN!");
+                    StartCoroutine(TitanDies());
+                    Invoke("TransitionToEndScreen", 15.0f);
+                }
             }
         }
     }

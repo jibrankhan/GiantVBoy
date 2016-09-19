@@ -2087,6 +2087,7 @@ MonoBehaviour:
   dungeon: {fileID: 0}
   finalDamageResist: 3
   loseDistance: 60
+  giantRiverResetSpeed: 4
   giantMaxSpeed: 12
   giantAccelator: 1.000001
 --- !u!114 &114000013846266070
@@ -2194,7 +2195,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1000013758969208}
   m_Enabled: 1
   m_Radius: 2.3
-  m_Speed: 7
+  m_Speed: 7.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

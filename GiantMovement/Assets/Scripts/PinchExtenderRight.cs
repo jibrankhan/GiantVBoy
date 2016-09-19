@@ -60,8 +60,7 @@ public class PinchExtenderRight : Extender
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
-    {
-        print(other.tag);
+    { 
         // If touched by index finger
         if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD && IsPinchingRight())
         {
@@ -83,7 +82,6 @@ public class PinchExtenderRight : Extender
 
     void OnTriggerExit(Collider other)
     {
-        print(other.tag);
         if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD)
         {
             print("EXIT CLOUD");
