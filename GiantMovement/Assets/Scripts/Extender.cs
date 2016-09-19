@@ -14,4 +14,7 @@ public class Extender : MonoBehaviour {
     protected Ruin[] ruins;
     protected float speed;
     protected Vector3 lastPosition = Vector3.zero;
+
+    public Boy boy;
+    protected Rigidbody r;
 }

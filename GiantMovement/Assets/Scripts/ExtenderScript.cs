@@ -5,10 +5,11 @@ public class ExtenderScript : MonoBehaviour {
 
     private Component[] components;
     public GameObject extender;
-    public float k = 30f;
+    public float k;
     public float cameraX = 0;
     public float cameraY = 0;
     public float cameraZ = 0;
+    public bool occulusSettings;
 
     Vector3 origin;
 
@@ -18,6 +19,16 @@ public class ExtenderScript : MonoBehaviour {
     void Start () {
         //GameObject rig = GameObject.Find("LMHeadMountedRig1");
         //origin = rig.transform.position;
+        if(occulusSettings)
+        {
+            k = 15f;
+            cameraY = -4;
+        }
+        else
+        {
+            k = 30f;
+            cameraY = 0;
+        }
     }
 	
 	// Update is called once per frame

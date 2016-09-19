@@ -3,9 +3,6 @@ using System.Collections;
 
 public class PinchExtenderLeft : Extender
 {
-    public Boy boy;
-    Rigidbody r;
-
     // Use this for initialization
     void Start()
     {
