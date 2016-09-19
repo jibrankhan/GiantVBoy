@@ -34,7 +34,7 @@ public class Titan : Agent {
 	// Update is called once per frame
 	void Update () {
 
-        print(agent.speed);
+        //print(agent.speed);
 
         // If giants speed is not greater than or equal to max speed
         if(!(agent.speed >= giantMaxSpeed))
@@ -171,7 +171,7 @@ public class Titan : Agent {
 
         if (dungeon.ActNumber == 0)
         {
-            dungeon.RequestActChange(1);
+            //dungeon.RequestActChange(1);
         }
     }
 

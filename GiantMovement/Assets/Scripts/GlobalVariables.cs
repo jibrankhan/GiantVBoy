@@ -18,4 +18,5 @@
     public const string MAIN_SCENE_NAME = "Staging";
     public const string RUIN = "Ruin";
     public const string BOY = "Boy";
+    public const string EFFECT = "Effect";
 }

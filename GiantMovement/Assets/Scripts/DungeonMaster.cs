@@ -78,7 +78,7 @@ public class DungeonMaster : MonoBehaviour
         if(actTwoRiverCompleted == actTwoRiverNumber)
         {
             titan.TitanTakeDamage();
-            RequestActChange(2);
+            //RequestActChange(2);
         }
     }
 

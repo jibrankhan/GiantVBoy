@@ -2776,7 +2776,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012475418258, guid: 0bf61dbda9cb2924aa8247f21bcb8647, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1396.9
+      value: 1230.2
       objectReference: {fileID: 0}
     - target: {fileID: 4000012475418258, guid: 0bf61dbda9cb2924aa8247f21bcb8647, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2784,7 +2784,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012475418258, guid: 0bf61dbda9cb2924aa8247f21bcb8647, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 250.3
+      value: 263
       objectReference: {fileID: 0}
     - target: {fileID: 4000012475418258, guid: 0bf61dbda9cb2924aa8247f21bcb8647, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4066,7 +4066,7 @@ Prefab:
     - target: {fileID: 114000010885617972, guid: d9cf33a5401eea4488f3a44b39d75729,
         type: 2}
       propertyPath: testActNumber
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 82000013885949662, guid: d9cf33a5401eea4488f3a44b39d75729,
         type: 2}
@@ -8255,6 +8255,16 @@ Prefab:
     - target: {fileID: 1000011922733102, guid: 0bf61dbda9cb2924aa8247f21bcb8647, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82000010328087496, guid: 0bf61dbda9cb2924aa8247f21bcb8647,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82000011759728532, guid: 0bf61dbda9cb2924aa8247f21bcb8647,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bf61dbda9cb2924aa8247f21bcb8647, type: 2}
