@@ -20,6 +20,7 @@ TagManager:
   - FinalRiver
   - PinchExtenderLeft
   - PinchExtender
+  - Boy
   layers:
   - Default
   - TransparentFX
