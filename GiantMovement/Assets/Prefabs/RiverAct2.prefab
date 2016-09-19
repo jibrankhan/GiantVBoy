@@ -58,7 +58,7 @@ GameObject:
   - 54: {fileID: 54000012544619592}
   m_Layer: 8
   m_Name: RiverAct2
-  m_TagString: River
+  m_TagString: FinalRiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,8 +126,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011978229362}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 1491.1, y: 13.2, z: 263.3}
-  m_LocalScale: {x: 35.00019, y: 1.3, z: 50.000275}
+  m_LocalPosition: {x: 1866.7, y: 10, z: 258.1}
+  m_LocalScale: {x: 54.057823, y: 1.3, z: 103.83148}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
   - {fileID: 4000010534667166}
@@ -284,3 +284,6 @@ MonoBehaviour:
   riverBed: {fileID: 1000011790335130}
   riverDry: {fileID: 2100000, guid: 8f0653a445487b7499aafa150eefd854, type: 2}
   riverWet: {fileID: 2100000, guid: 8178a638213f11b4d9ac61060463a07e, type: 2}
+  riverDropMax: 3
+  riverFull: 0
+  dungeon: {fileID: 0}
