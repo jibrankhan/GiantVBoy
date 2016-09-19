@@ -24,7 +24,7 @@ public class TriggerSound2 : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "Boy")
+        if (other.tag == GlobalVariables.BOY)
         {
             audiosource.Play();
 
