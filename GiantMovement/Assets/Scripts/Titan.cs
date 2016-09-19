@@ -147,6 +147,7 @@ public class Titan : Agent {
 
     public IEnumerator TitanTakeDamage()
     {
+        print("TAKE DAMAGE");
         agent.Stop();
         //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
         animator.SetBool(GlobalVariables.ANIM_BOOL_TAKE_DAMAGE, true);
