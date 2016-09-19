@@ -97,10 +97,7 @@ public class Titan : Agent {
     {
         if(collider.tag == GlobalVariables.THUNDER_CLOUD)
         { 
-            if(dungeon.ActNumber == 0)
-            {
-                StartCoroutine(TitanTakeDamage());
-            }
+            StartCoroutine(TitanTakeDamage());
 
             // And this is act 2 and standing in final river
             if (dungeon.ActNumber == 2 && inFinalWater)
@@ -111,8 +108,8 @@ public class Titan : Agent {
                 // End game if damage is final
                 if (damageTaken == finalDamageResist)
                 {
-                    print("YOU LOSE");
-                    Application.Quit();
+                    print("YOU WIN!");
+                    SceneManager.LoadScene(GlobalVariables.END_SCENE_NAME);
                 }
             } 
         }
@@ -153,10 +150,11 @@ public class Titan : Agent {
         agent.Stop();
         //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
         animator.SetBool(GlobalVariables.ANIM_BOOL_TAKE_DAMAGE, true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         animator.SetBool(GlobalVariables.ANIM_BOOL_TAKE_DAMAGE, false);
         //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
         //animator.SetTrigger(GlobalVariables.TRIGGER_TAKE_DAMAGE);
+        yield return new WaitForSeconds(3);
         agent.Resume();
 
         if (dungeon.ActNumber == 0)

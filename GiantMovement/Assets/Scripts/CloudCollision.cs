@@ -24,6 +24,9 @@ public class CloudCollision : MonoBehaviour {
         GameObject rig = GameObject.Find(GlobalVariables.GREEK_GOD);
         gg = rig.GetComponent<GreekGod>();
 
+        GameObject dm = GameObject.Find(GlobalVariables.DUNGEON_MASTER);
+        dungeon = dm.GetComponent<DungeonMaster>();
+
         // Setup audio clips
         audio.clip = rainSounds[Random.Range(0, rainSounds.Capacity)];
         audio2.clip = rainGrab[Random.Range(0, rainGrab.Capacity)];
@@ -61,7 +64,7 @@ public class CloudCollision : MonoBehaviour {
     // Increase rain counter
     public void IncreaseRainCounter()
     {
-        dungeon.IncreaseRainCounter();
+        dungeon.NotifyRiverComplete();
     }
 
     public void DropletDestroyed()
