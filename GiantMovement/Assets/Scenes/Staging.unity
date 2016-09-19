@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gg: {fileID: 117784315}
   snapRange: 20
+  boy: {fileID: 0}
 --- !u!114 &406604897 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010885617972, guid: d9cf33a5401eea4488f3a44b39d75729,
@@ -1416,6 +1417,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!136 &474421349
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2430,6 +2432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gg: {fileID: 117784315}
   snapRange: 20
+  boy: {fileID: 0}
 --- !u!54 &701732038
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4386,6 +4389,11 @@ Prefab:
       propertyPath: testActNumber
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82000013885949662, guid: d9cf33a5401eea4488f3a44b39d75729,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9cf33a5401eea4488f3a44b39d75729, type: 2}
   m_IsPrefabParent: 0
@@ -5243,6 +5251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gg: {fileID: 117784315}
   snapRange: 15
+  boy: {fileID: 0}
 --- !u!54 &1656415693
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7994,6 +8003,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!136 &1834876186
 CapsuleCollider:
   m_ObjectHideFlags: 0
