@@ -2754,7 +2754,7 @@ Transform:
   - {fileID: 1052669665}
   - {fileID: 1055335124}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &839152930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,7 +3115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013341426312, guid: 5ff2716736da72340a7ecb4d6c398f13, type: 2}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1000011978229362, guid: 5ff2716736da72340a7ecb4d6c398f13, type: 2}
       propertyPath: m_Name
@@ -3643,7 +3643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012475418258, guid: 0bf61dbda9cb2924aa8247f21bcb8647, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114000013112594946, guid: 0bf61dbda9cb2924aa8247f21bcb8647,
         type: 2}
@@ -4033,7 +4033,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011077615010, guid: d9cf33a5401eea4488f3a44b39d75729, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114000010885617972, guid: d9cf33a5401eea4488f3a44b39d75729,
         type: 2}
@@ -4227,7 +4227,7 @@ Transform:
   - {fileID: 1958090692}
   - {fileID: 1036197540}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &1231597067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,7 +4910,7 @@ Transform:
   m_Children:
   - {fileID: 772685366}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
 --- !u!1 &1655016118
 GameObject:
   m_ObjectHideFlags: 0
