@@ -956,10 +956,6 @@ Prefab:
       propertyPath: dungeon
       value: 
       objectReference: {fileID: 406604897}
-    - target: {fileID: 1000013758969208, guid: 8409d08c58354c24bae3a838ff8bd0d9, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8409d08c58354c24bae3a838ff8bd0d9, type: 2}
   m_IsPrefabParent: 0
@@ -1155,7 +1151,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012244382960, guid: 0497c38cfdc4b2d468dc9caf0b6647e3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1222.8
+      value: 1224.6
       objectReference: {fileID: 0}
     - target: {fileID: 4000012244382960, guid: 0497c38cfdc4b2d468dc9caf0b6647e3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1184,11 +1180,6 @@ Prefab:
     - target: {fileID: 4000012244382960, guid: 0497c38cfdc4b2d468dc9caf0b6647e3, type: 2}
       propertyPath: m_RootOrder
       value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 195000010045708766, guid: 0497c38cfdc4b2d468dc9caf0b6647e3,
-        type: 2}
-      propertyPath: m_Speed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0497c38cfdc4b2d468dc9caf0b6647e3, type: 2}
