@@ -14,6 +14,6 @@
     public const string DUNGEON_MASTER = "DungeonMaster";
     public const string ANIM_BOOL_TAKE_DAMAGE = "TakeDamage";
     public const string ANIM_BOOL_GAME_OVER = "GameOver";
-    public const string END_SCENE_NAME = "End";
+    public const string END_SCENE_NAME = "EndPage";
     public const string MAIN_SCENE_NAME = "Staging";
 }

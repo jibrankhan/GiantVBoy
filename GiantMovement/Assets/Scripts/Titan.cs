@@ -112,7 +112,7 @@ public class Titan : Agent {
                 if (damageTaken == finalDamageResist)
                 {
                     print("YOU LOSE");
-                    Application.Quit();
+                    SceneManager.LoadScene(GlobalVariables.END_SCENE_NAME);
                 }
             } 
         }
