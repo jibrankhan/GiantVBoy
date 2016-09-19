@@ -212,3 +212,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6f2809326268bf9459c84ad400f4435d, type: 3}
   thunderSounds:
   - {fileID: 8300000, guid: f3c5751402b39c344b437e461d6e31b2, type: 3}
+  thunder: {fileID: 4000010066758300, guid: dfaf23f7d20e10c4e9791664aceacf2f, type: 2}
