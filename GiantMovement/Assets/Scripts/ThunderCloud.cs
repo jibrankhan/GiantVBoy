@@ -54,12 +54,12 @@ public class ThunderCloud : MonoBehaviour {
         }
 
         if(collider.tag == GlobalVariables.GIANT)
-        {    
+        {
+            Transform hitGiantThunder = Instantiate(thunder, transform) as Transform;
+
             if (!audio.isPlaying)
             {
                 collided = true;
-
-                Transform hitGiantThunder = Instantiate(thunder, transform) as Transform;
                 audio.clip = thunderSounds[0];
                 audio.Play();
             }

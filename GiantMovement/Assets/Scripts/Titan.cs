@@ -20,6 +20,9 @@ public class Titan : Agent {
     Animator animator;
     bool firstAnimation;
 
+    public float giantMaxSpeed;
+    public float giantAccelator;
+
     // Use this for initialization
     void Start () {
         // Move towards first position
@@ -31,16 +34,24 @@ public class Titan : Agent {
 	// Update is called once per frame
 	void Update () {
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName(GlobalVariables.GIANT_WALK_ANIMATION))
+        print(agent.speed);
+
+        // If giants speed is not greater than or equal to max speed
+        if(!(agent.speed >= giantMaxSpeed))
         {
+            agent.speed = agent.speed * giantAccelator;
+        }
+       
+        //if (animator.GetCurrentAnimatorStateInfo(0).IsName(GlobalVariables.GIANT_WALK_ANIMATION))
+        //{
             //print("PLAYING AUDIO!");
-            if(!audio.isPlaying)
-            {
-                audio.Play();
-            }
+           // if(!audio.isPlaying)
+            //{
+            //    audio.Play();
+            //}
 
             //if(animator.)
-        }
+        //}
 
 
         if (Vector3.Distance(transform.position, boy.transform.position) < loseDistance && DungeonMaster.GameState != -1)
@@ -147,6 +158,7 @@ public class Titan : Agent {
 
     public IEnumerator TitanTakeDamage()
     {
+        print("TAKE DAMAGE");
         agent.Stop();
         //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
         animator.SetBool(GlobalVariables.ANIM_BOOL_TAKE_DAMAGE, true);

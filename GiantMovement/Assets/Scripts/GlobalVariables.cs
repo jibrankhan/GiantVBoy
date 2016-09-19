@@ -16,4 +16,5 @@
     public const string ANIM_BOOL_GAME_OVER = "GameOver";
     public const string END_SCENE_NAME = "EndPage";
     public const string MAIN_SCENE_NAME = "Staging";
+    public const string RUIN = "Ruin";
 }
