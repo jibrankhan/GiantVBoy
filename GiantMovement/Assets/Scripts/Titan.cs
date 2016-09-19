@@ -20,6 +20,9 @@ public class Titan : Agent {
     Animator animator;
     bool firstAnimation;
 
+    public float giantMaxSpeed;
+    public float giantAccelator;
+
     // Use this for initialization
     void Start () {
         // Move towards first position
@@ -31,6 +34,14 @@ public class Titan : Agent {
 	// Update is called once per frame
 	void Update () {
 
+        print(agent.speed);
+
+        // If giants speed is not greater than or equal to max speed
+        if(!(agent.speed >= giantMaxSpeed))
+        {
+            agent.speed = agent.speed * giantAccelator;
+        }
+       
         if (animator.GetCurrentAnimatorStateInfo(0).IsName(GlobalVariables.GIANT_WALK_ANIMATION))
         {
             //print("PLAYING AUDIO!");
