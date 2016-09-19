@@ -34,15 +34,14 @@ public class PinchExtenderLeft : Extender
                 print(stickObject.tag);
                 if(stickObject.tag == GlobalVariables.RUIN)
                 {
-                    print("THROWING!");
-                    print(speed);
+                    //print("THROWING!");
+                    //print(speed);
                     Rigidbody r = stickObject.GetComponent<Rigidbody>();
 
                     // Allow to pass through extenders
-                    print("COLLISION IGNORED " + r.tag);
-                    Physics.IgnoreCollision(r.GetComponent<Collider>(), GetComponent<Collider>());
-
-                    r.AddForce(boy.transform.forward * speed * 20);
+                    //print("COLLISION IGNORED " + r.tag);
+                    //Physics.IgnoreCollision(r.GetComponent<Collider>(), GetComponent<Collider>());
+                    r.AddForce(-boy.transform.forward * 100);
                 }
             }
         }
@@ -98,6 +97,14 @@ public class PinchExtenderLeft : Extender
     {
         speed = (transform.position - lastPosition).magnitude;
         lastPosition = transform.position;
+
+        if(stickObject != null)
+        {
+            Rigidbody r = stickObject.GetComponent<Rigidbody>();
+            // Allow to pass through extenders
+            print("COLLISION IGNORED " + r.tag);
+            Physics.IgnoreCollision(r.GetComponent<Collider>(), GetComponent<Collider>());
+        }
     }
 
     // Update is called once per frame
