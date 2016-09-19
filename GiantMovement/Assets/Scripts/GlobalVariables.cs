@@ -19,4 +19,5 @@
     public const string RUIN = "Ruin";
     public const string BOY = "Boy";
     public const string EFFECT = "Effect";
+    public const string GIANT_DEAD = "GiantDead";
 }

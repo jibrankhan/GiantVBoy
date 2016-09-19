@@ -120,7 +120,8 @@ public class Titan : Agent {
                 if (damageTaken == finalDamageResist)
                 {
                     print("YOU WIN!");
-                    SceneManager.LoadScene(GlobalVariables.END_SCENE_NAME);
+                    StartCoroutine(TitanDies());
+                    Invoke("TransitionToEndScreen", 15.0f);
                 }
             } 
         }
@@ -175,9 +176,23 @@ public class Titan : Agent {
         }
     }
 
+    public IEnumerator TitanDies()
+    {
+        print("TITAN DEAD");
+        agent.Stop();
+        //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
+        animator.SetBool(GlobalVariables.GIANT_DEAD, true);
+        yield return new WaitForSeconds(3);
+    }
+
     public void TitanKillsBoy()
     {
         // Both agents stop and giant plays animation
         SceneManager.LoadScene("Staging");
+    }
+
+    public void TransitionToEndScreen()
+    {
+        SceneManager.LoadScene(GlobalVariables.END_SCENE_NAME);
     }
 }
