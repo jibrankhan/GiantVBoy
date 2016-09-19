@@ -21,7 +21,10 @@ public class River : MonoBehaviour {
         components = GetComponentsInChildren<NavMeshObstacle>();
         colliderComp = GetComponentsInChildren<BoxCollider>();
         riverBedRenderer = riverBed.GetComponent<MeshRenderer>();
-	}
+
+        GameObject dm = GameObject.Find(GlobalVariables.DUNGEON_MASTER);
+        dungeon = dm.GetComponent<DungeonMaster>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
