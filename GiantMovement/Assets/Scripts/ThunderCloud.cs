@@ -13,6 +13,10 @@ public class ThunderCloud : MonoBehaviour {
     bool collided = false;
     bool beingTouched = false;
 
+    //Nicky
+    public Transform thunder;
+
+
     // Use this for initialization
     void Start () {
         audio = GetComponent<AudioSource>();
@@ -54,6 +58,8 @@ public class ThunderCloud : MonoBehaviour {
             if (!audio.isPlaying)
             {
                 collided = true;
+
+                Transform hitGiantThunder = Instantiate(thunder, transform) as Transform;
                 audio.clip = thunderSounds[0];
                 audio.Play();
             }
