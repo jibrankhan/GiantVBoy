@@ -9,6 +9,7 @@ public class PinchExtenderRight : Extender
         // Collect clouds
         thunderClouds = FindObjectsOfType<ThunderCloud>();
         rainClouds = FindObjectsOfType<CloudCollision>();
+        ruins = FindObjectsOfType<Ruin>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,22 @@ public class PinchExtenderRight : Extender
                 print("MOVE CLOUD!");
                 stickObject.transform.position = transform.position;
                 //TransformObject(stickObject.transform.position, transform.position);
+            }
+            else
+            {
+                print("IM HERE!");
+                print(stickObject.tag);
+                if (stickObject.tag == GlobalVariables.RUIN)
+                {
+                    //print("THROWING!");
+                    //print(speed);
+                    Rigidbody r = stickObject.GetComponent<Rigidbody>();
+
+                    // Allow to pass through extenders
+                    //print("COLLISION IGNORED " + r.tag);
+                    //Physics.IgnoreCollision(r.GetComponent<Collider>(), GetComponent<Collider>());
+                    r.AddForce(-boy.transform.forward * 100);
+                }
             }
         }
         else
@@ -55,13 +72,40 @@ public class PinchExtenderRight : Extender
                     }
                 }
             }
+            foreach (Ruin r in ruins)
+            {
+                // If pinching in anyway, not cloud already set and distance under a position
+                if (IsPinchingRight() && stickObject == null)
+                {
+                    if (Vector3.Distance(transform.position, r.transform.position) < snapRange)
+                    {
+                        stickObject = r.gameObject;
+                        stick = true;
+                        //TransformObject(stickObject.transform.position, transform.position);
+                        stickObject.transform.position = transform.position;
+                    }
+                }
+            }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        speed = (transform.position - lastPosition).magnitude;
+        lastPosition = transform.position;
+
+        if (stickObject != null)
+        {
+            Rigidbody r = stickObject.GetComponent<Rigidbody>();
+            // Allow to pass through extenders
+            print("COLLISION IGNORED " + r.tag);
+            Physics.IgnoreCollision(r.GetComponent<Collider>(), GetComponent<Collider>());
         }
     }
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
-    {
-        print(other.tag);
+    { 
         // If touched by index finger
         if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD && IsPinchingRight())
         {
@@ -83,7 +127,6 @@ public class PinchExtenderRight : Extender
 
     void OnTriggerExit(Collider other)
     {
-        print(other.tag);
         if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD)
         {
             print("EXIT CLOUD");

@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 12efb7ac5dc95ff4ba3d67574f537bab
+timeCreated: 1474303192
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ankle_L
+    100002: Ankle_R
+    100004: back
+    100006: bottom
+    100008: Clav_L
+    100010: Clav_R
+    100012: Elbow_L
+    100014: Elbow_R
+    100016: Foot_L
+    100018: Foot_R
+    100020: //RootNode
+    100022: Head
+    100024: Hip_L
+    100026: Hip_R
+    100028: ikHandle1
+    100030: ikHandle2
+    100032: ikHandle3
+    100034: ikHandle4
+    100036: joint11
+    100038: joint11 1
+    100040: joint12
+    100042: joint12 1
+    100044: joint2
+    100046: joint2 1
+    100048: joint3
+    100050: joint3 1
+    100052: joint5
+    100054: joint5 1
+    100056: joint6
+    100058: joint6 1
+    100060: joint8
+    100062: joint8 1
+    100064: joint9
+    100066: joint9 1
+    100068: Knee_L
+    100070: Knee_R
+    100072: Knux_L_1st
+    100074: Knux_L_Middle
+    100076: Knux_L_Pinkie
+    100078: Knux_L_Ring
+    100080: Knux_R_1st
+    100082: Knux_R_Middle
+    100084: Knux_R_Pinkie
+    100086: Knux_R_Ring
+    100088: Nose
+    100090: pCube1
+    100092: Shoulder_L
+    100094: Shoulder_R
+    100096: Spine_2
+    100098: Spine_3
+    100100: Spine_4
+    100102: Spine_5
+    100104: Spine_6
+    100106: Spine_7
+    100108: Spine_Base
+    100110: Thumb_L1
+    100112: Thumb_L2
+    100114: Thumb_R1
+    100116: Thumb_R2
+    100118: Toe_L
+    100120: Toe_R
+    100122: Wrist_L
+    100124: Wrist_R
+    400000: Ankle_L
+    400002: Ankle_R
+    400004: back
+    400006: bottom
+    400008: Clav_L
+    400010: Clav_R
+    400012: Elbow_L
+    400014: Elbow_R
+    400016: Foot_L
+    400018: Foot_R
+    400020: //RootNode
+    400022: Head
+    400024: Hip_L
+    400026: Hip_R
+    400028: ikHandle1
+    400030: ikHandle2
+    400032: ikHandle3
+    400034: ikHandle4
+    400036: joint11
+    400038: joint11 1
+    400040: joint12
+    400042: joint12 1
+    400044: joint2
+    400046: joint2 1
+    400048: joint3
+    400050: joint3 1
+    400052: joint5
+    400054: joint5 1
+    400056: joint6
+    400058: joint6 1
+    400060: joint8
+    400062: joint8 1
+    400064: joint9
+    400066: joint9 1
+    400068: Knee_L
+    400070: Knee_R
+    400072: Knux_L_1st
+    400074: Knux_L_Middle
+    400076: Knux_L_Pinkie
+    400078: Knux_L_Ring
+    400080: Knux_R_1st
+    400082: Knux_R_Middle
+    400084: Knux_R_Pinkie
+    400086: Knux_R_Ring
+    400088: Nose
+    400090: pCube1
+    400092: Shoulder_L
+    400094: Shoulder_R
+    400096: Spine_2
+    400098: Spine_3
+    400100: Spine_4
+    400102: Spine_5
+    400104: Spine_6
+    400106: Spine_7
+    400108: Spine_Base
+    400110: Thumb_L1
+    400112: Thumb_L2
+    400114: Thumb_R1
+    400116: Thumb_R2
+    400118: Toe_L
+    400120: Toe_R
+    400122: Wrist_L
+    400124: Wrist_R
+    4300000: pCube1
+    7400000: Giant-04-Death
+    9500000: //RootNode
+    13700000: pCube1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

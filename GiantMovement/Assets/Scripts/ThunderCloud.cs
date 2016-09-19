@@ -55,6 +55,8 @@ public class ThunderCloud : MonoBehaviour {
 
         if(collider.tag == GlobalVariables.GIANT)
         {
+            print("THUNDER CLOUD HIT GIANT");
+
             Transform hitGiantThunder = Instantiate(thunder, transform) as Transform;
 
             if (!audio.isPlaying)
