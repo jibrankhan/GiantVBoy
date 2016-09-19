@@ -11,6 +11,11 @@ public class River : MonoBehaviour {
     public GameObject riverBed;
     public Material riverDry, riverWet;
 
+    public int riverDropMax;
+    private int rainAbsorbed;
+    public bool riverFull;
+    public DungeonMaster dungeon;
+
     // Use this for initialization
     void Start () {
         components = GetComponentsInChildren<NavMeshObstacle>();
@@ -52,6 +57,19 @@ public class River : MonoBehaviour {
         set
         {
             isActive = value;
+        }
+    }
+
+    public void IncreaseRainCounter()
+    {
+        rainAbsorbed++;
+        // If exactly right have been gathered
+        if (rainAbsorbed == riverDropMax)
+        {
+            riverFull = true;
+            print("RIVER ACTIVATED");
+            ActivateRiver(true);
+            dungeon.NotifyRiverComplete();
         }
     }
 }

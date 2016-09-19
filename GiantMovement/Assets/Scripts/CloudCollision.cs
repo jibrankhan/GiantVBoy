@@ -61,7 +61,7 @@ public class CloudCollision : MonoBehaviour {
     // Increase rain counter
     public void IncreaseRainCounter()
     {
-        dungeon.IncreaseRainCounter();
+        dungeon.NotifyRiverComplete();
     }
 
     public void DropletDestroyed()
