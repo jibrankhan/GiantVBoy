@@ -21,6 +21,7 @@ TagManager:
   - PinchExtenderLeft
   - PinchExtender
   - Boy
+  - Ruin
   layers:
   - Default
   - TransparentFX

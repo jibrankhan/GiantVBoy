@@ -42,16 +42,16 @@ public class Titan : Agent {
             agent.speed = agent.speed * giantAccelator;
         }
        
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName(GlobalVariables.GIANT_WALK_ANIMATION))
-        {
+        //if (animator.GetCurrentAnimatorStateInfo(0).IsName(GlobalVariables.GIANT_WALK_ANIMATION))
+        //{
             //print("PLAYING AUDIO!");
-            if(!audio.isPlaying)
-            {
-                audio.Play();
-            }
+           // if(!audio.isPlaying)
+            //{
+            //    audio.Play();
+            //}
 
             //if(animator.)
-        }
+        //}
 
 
         if (Vector3.Distance(transform.position, boy.transform.position) < loseDistance && DungeonMaster.GameState != -1)

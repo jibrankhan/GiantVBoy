@@ -21,6 +21,7 @@ public class PinchExtenderLeft : Extender
             if (IsPinchingLeft() && stickObject != null)
             {
                 print("MOVE CLOUD!");
+
                 stickObject.transform.position = transform.position;
                 //TransformObject(stickObject.transform.position, transform.position);
             }
@@ -62,7 +63,7 @@ public class PinchExtenderLeft : Extender
     void OnTriggerEnter(Collider other)
     {
         // If touched by index finger
-        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD && IsPinchingLeft())
+        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD || other.tag == GlobalVariables.RUIN && IsPinchingLeft())
         {
             print("ENTER CLOUD");
             stick = true;
@@ -82,7 +83,7 @@ public class PinchExtenderLeft : Extender
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD)
+        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD || other.tag == GlobalVariables.RUIN)
         {
             print("EXIT CLOUD");
             stick = false;
