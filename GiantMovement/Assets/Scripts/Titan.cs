@@ -33,13 +33,23 @@ public class Titan : Agent {
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName(GlobalVariables.GIANT_WALK_ANIMATION))
         {
-            print("PLAYING AUDIO!");
+            //print("PLAYING AUDIO!");
             if(!audio.isPlaying)
             {
                 audio.Play();
             }
 
             //if(animator.)
+        }
+
+
+        if (Vector3.Distance(transform.position, boy.transform.position) < loseDistance && DungeonMaster.GameState != -1)
+        {
+            DungeonMaster.GameState = -1;
+            agent.Stop();
+            boy.GetNavAgent.Stop();
+            animator.SetBool(GlobalVariables.ANIM_BOOL_GAME_OVER, true);
+            Invoke("TitanKillsBoy", 15.0f);
         }
 
         // Titan/boy distance checks
@@ -60,10 +70,7 @@ public class Titan : Agent {
             //print(Vector3.Distance(transform.position, boy.transform.position));
 
             // If close to boy reset game for now   
-            //if(Vector3.Distance(transform.position, boy.transform.position) < loseDistance)
-            //{
-            //    SceneManager.LoadScene("Staging");
-            //}
+            
 
             /*if (agent.remainingDistance <= 20f)
             {
@@ -90,10 +97,7 @@ public class Titan : Agent {
     {
         if(collider.tag == GlobalVariables.THUNDER_CLOUD)
         { 
-            if(dungeon.ActNumber == 0)
-            {
-                StartCoroutine(TitanTakeDamage());
-            }
+            StartCoroutine(TitanTakeDamage());
 
             // And this is act 2 and standing in final river
             if (dungeon.ActNumber == 2 && inFinalWater)
@@ -104,8 +108,8 @@ public class Titan : Agent {
                 // End game if damage is final
                 if (damageTaken == finalDamageResist)
                 {
-                    print("YOU LOSE");
-                    Application.Quit();
+                    print("YOU WIN!");
+                    SceneManager.LoadScene(GlobalVariables.END_SCENE_NAME);
                 }
             } 
         }
@@ -121,6 +125,11 @@ public class Titan : Agent {
         if (collider.tag == GlobalVariables.FINAL_RIVER)
         {
             inFinalWater = false;
+        }
+
+        if (collider.tag == GlobalVariables.RIVER)
+        {
+            agent.speed = 7;
         }
     }
 
@@ -139,15 +148,24 @@ public class Titan : Agent {
     public IEnumerator TitanTakeDamage()
     {
         agent.Stop();
-        print(Time.time);
-        // PLAY TITAN DAMAGE ANIMATION
-        yield return new WaitForSeconds(5);
-        print(Time.time);
+        //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
+        animator.SetBool(GlobalVariables.ANIM_BOOL_TAKE_DAMAGE, true);
+        yield return new WaitForSeconds(3);
+        animator.SetBool(GlobalVariables.ANIM_BOOL_TAKE_DAMAGE, false);
+        //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
+        //animator.SetTrigger(GlobalVariables.TRIGGER_TAKE_DAMAGE);
+        yield return new WaitForSeconds(3);
         agent.Resume();
 
         if (dungeon.ActNumber == 0)
         {
             dungeon.RequestActChange(1);
         }
+    }
+
+    public void TitanKillsBoy()
+    {
+        // Both agents stop and giant plays animation
+        SceneManager.LoadScene("Staging");
     }
 }

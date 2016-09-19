@@ -9,6 +9,8 @@ public class RainCollision : MonoBehaviour {
     // Use this for initialization
     void Start () {
         cloud = gameObject.transform.GetComponentInParent<CloudCollision>();
+
+
     }
 	
 	// Update is called once per frame
@@ -16,12 +18,19 @@ public class RainCollision : MonoBehaviour {
 	
 	}
 
-    // Update is called once per frame
+    // Clean up stray clouds
     void OnCollisionEnter(Collision collider)
     {
-        // Not delete if touching player or clouds
-        if (collider.gameObject.tag != GlobalVariables.PLAYER && collider.gameObject.tag != GlobalVariables.CLOUDS && collider.gameObject.tag != GlobalVariables.RIVER)
+        // Not delete if touching player or clouds or pinch extenders
+        if (collider.gameObject.tag != GlobalVariables.PINCH_EXTENDER_LEFT && collider.gameObject.tag != GlobalVariables.PINCH_EXTENDER_RIGHT && 
+            collider.gameObject.tag != GlobalVariables.CLOUDS)
         {
+            // Allow to pass through extenders
+            if(collider.gameObject.tag == GlobalVariables.PINCH_EXTENDER_LEFT && collider.gameObject.tag == GlobalVariables.PINCH_EXTENDER_RIGHT)
+            {
+                Physics.IgnoreCollision(collider.gameObject.GetComponent<Collider>() , GetComponent<Collider>());
+            }
+
             if (gameObject != null)
             {
                 cloud.DropletDestroyed();
@@ -34,8 +43,17 @@ public class RainCollision : MonoBehaviour {
     {
         if (collider.tag == GlobalVariables.RIVER)
         {
-            cloud.IncreaseRainCounter();
-            cloud.Delete();
+            // Tell river to increase rain counter
+            River r = collider.GetComponent<River>();
+
+            // If river is not full then notify and destroy clouds
+            if (!r.riverFull)
+            {
+                r.IncreaseRainCounter();
+                cloud.IncreaseRainCounter();
+                cloud.Delete();
+                Destroy(gameObject);
+            }
         }
     }
 }

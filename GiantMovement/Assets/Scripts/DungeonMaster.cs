@@ -4,27 +4,25 @@ using System.Collections.Generic;
 
 public class DungeonMaster : MonoBehaviour
 { 
-    private River[] rivers;
-    static public int GameState;
+    public static int GameState;
     public Titan titan;
     public Boy boy;
     public List<Transform> titanTargets;
     public List<Transform> boyTargets;
-    public int rainCounter = 0;
 
     NavMeshAgent titanAgent, boyAgent;
     public int ActNumber { get; set; }
     public float boyDestinationYAdjustment;
-    protected bool isAct1Done, isAct2Done, isAct3Done;
 
     public bool isTesting;
     public int testActNumber;
 
+    public int actTwoRiverNumber;
+    private int actTwoRiverCompleted;
+
     // Use this for initialization
     void Start()
     {
-        rivers = FindObjectsOfType(typeof(River)) as River[];
-
         ActNumber = -1;
 
         //TESTING VARIABLES
@@ -72,21 +70,13 @@ public class DungeonMaster : MonoBehaviour
     }
 
     // Increase rain counter
-    public void IncreaseRainCounter()
+    public void NotifyRiverComplete()
     {
-        rainCounter++;
+        actTwoRiverCompleted++;
 
         // If three rain drops have been gathered
-        if(rainCounter >= 3)
+        if(actTwoRiverCompleted == actTwoRiverNumber)
         {
-            // Change river texture
-            foreach(River r in rivers)
-            {
-                if(r.tag == GlobalVariables.RIVER)
-                {
-                    r.IsActive = true;
-                }
-            }
             titan.TitanTakeDamage();
             RequestActChange(2);
         }

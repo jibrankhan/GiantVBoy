@@ -52,10 +52,6 @@ public class ThunderCloud : MonoBehaviour {
         {
             extenderCollider = collider;
         }
-        else
-        {
-            extenderCollider = null;
-        }
 
         if(collider.tag == GlobalVariables.GIANT)
         {    
@@ -67,6 +63,14 @@ public class ThunderCloud : MonoBehaviour {
                 audio.clip = thunderSounds[0];
                 audio.Play();
             }
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (!BeingPinched(collider))
+        {
+            extenderCollider = null;
         }
     }
 
