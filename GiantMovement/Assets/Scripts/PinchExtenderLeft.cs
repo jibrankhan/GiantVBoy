@@ -21,25 +21,9 @@ public class PinchExtenderLeft : Extender
             if (IsPinchingLeft() && stickObject != null)
             {
                 print("MOVE CLOUD!");
-
+                // Add lerp function
                 stickObject.transform.position = transform.position;
                 //TransformObject(stickObject.transform.position, transform.position);
-            }
-            else
-            {
-                print("IM HERE!");
-                print(stickObject.tag);
-                if(stickObject.tag == GlobalVariables.RUIN)
-                {
-                    //print("THROWING!");
-                    //print(speed);
-                    Rigidbody r = stickObject.GetComponent<Rigidbody>();
-
-                    // Allow to pass through extenders
-                    //print("COLLISION IGNORED " + r.tag);
-                    //Physics.IgnoreCollision(r.GetComponent<Collider>(), GetComponent<Collider>());
-                    r.AddForce(-boy.transform.forward * 100);
-                }
             }
         }
         // Attach object
@@ -139,16 +123,14 @@ public class PinchExtenderLeft : Extender
             //stickObject = null;
         }
 
-        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD)
+        if (other.tag == GlobalVariables.RUIN)
         {
-            print("EXIT CLOUD");
+            //print("THROWING!");
+            //print(speed);
             stick = false;
             stickObject = null;
-            //transform.position = new Vector3 (5.0f, 5.0f, 5.0f);		
-            //print("The cloud has been touched");
-            //stickObject = other.gameObject;
-            //onStick = true;
-            //stickObject = null;
+            Rigidbody r = other.GetComponent<Rigidbody>();
+            r.velocity = transform.forward * 5;
         }
     }
 
