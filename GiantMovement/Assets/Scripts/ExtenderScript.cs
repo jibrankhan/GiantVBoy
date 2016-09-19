@@ -30,6 +30,9 @@ public class ExtenderScript : MonoBehaviour {
 
         //extender.transform.position = new Vector3(-38.4f, -13.4f, -115.7f) + (gameObject.transform.position - new Vector3(-38.4f, -13.4f, -115.7f)) * k;
         //extender.transform.position =  origin + (gameObject.transform.position - origin) * k;
-        extender.transform.position = origin + (new Vector3(gameObject.transform.position.x + cameraX, gameObject.transform.position.y + cameraY, gameObject.transform.position.z + cameraZ) - origin) * k;
+        //extender.transform.position = origin + (new Vector3(gameObject.transform.position.x + cameraX, gameObject.transform.position.y + cameraY, gameObject.transform.position.z + cameraZ) - origin) * k;
+        Vector3 distanceVec = new Vector3(gameObject.transform.position.x + cameraX, gameObject.transform.position.y + cameraY, gameObject.transform.position.z + cameraZ) - origin;
+        extender.transform.position = origin + distanceVec * distanceVec.sqrMagnitude;
+        
     }
 }
