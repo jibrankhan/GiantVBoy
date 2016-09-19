@@ -343,6 +343,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!1 &105718291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1096,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!1001 &378958999
 Prefab:
   m_ObjectHideFlags: 0
@@ -1134,11 +1136,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 82000011466324716, guid: 2d583ab1431923b4b9fdd497bf55c52d,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d583ab1431923b4b9fdd497bf55c52d, type: 2}
   m_IsPrefabParent: 0
@@ -1151,7 +1148,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012244382960, guid: 0497c38cfdc4b2d468dc9caf0b6647e3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1224.6
+      value: 1375.1
       objectReference: {fileID: 0}
     - target: {fileID: 4000012244382960, guid: 0497c38cfdc4b2d468dc9caf0b6647e3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1408,6 +1405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gg: {fileID: 117784315}
   snapRange: 20
+  boy: {fileID: 0}
 --- !u!114 &406604897 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010885617972, guid: d9cf33a5401eea4488f3a44b39d75729,
@@ -1489,6 +1487,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!136 &474421349
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1626,6 +1625,52 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!1001 &522740580
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1411.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 14.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 263.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011716774344, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_RootOrder
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013201835002, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+      propertyPath: m_Name
+      value: MoreThanOneCloud
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &534785493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,6 +2345,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!1 &692785817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gg: {fileID: 117784315}
   snapRange: 20
+  boy: {fileID: 0}
 --- !u!54 &701732038
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2625,6 +2672,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!1 &706616438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,7 +3231,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012252684518, guid: fad5278a04a0c1344b7de10252f13334, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1984.1
+      value: 1926.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000012252684518, guid: fad5278a04a0c1344b7de10252f13334, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3212,11 +3260,6 @@ Prefab:
     - target: {fileID: 4000012252684518, guid: fad5278a04a0c1344b7de10252f13334, type: 2}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 82000012172604164, guid: fad5278a04a0c1344b7de10252f13334,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fad5278a04a0c1344b7de10252f13334, type: 2}
@@ -3801,6 +3844,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!1001 &1027171119
 Prefab:
   m_ObjectHideFlags: 0
@@ -4183,16 +4227,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 82000010287089150, guid: 6b62d5f21b3af5347bf513a3f6035366,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82000010287089150, guid: 6b62d5f21b3af5347bf513a3f6035366,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b62d5f21b3af5347bf513a3f6035366, type: 2}
   m_IsPrefabParent: 0
@@ -4404,6 +4438,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!1001 &1145820579
 Prefab:
   m_ObjectHideFlags: 0
@@ -9147,6 +9182,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!136 &1834876186
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9417,6 +9453,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!114 &1905484392 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011386859574, guid: 8409d08c58354c24bae3a838ff8bd0d9,
@@ -9638,6 +9675,7 @@ MonoBehaviour:
   cameraX: 0
   cameraY: 0
   cameraZ: 0
+  occulusSettings: 0
 --- !u!1 &1998116835
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013201835002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1275.5884, y: 14.2, z: 260.3}
+  m_LocalPosition: {x: 1411.8, y: 14.2, z: 263.9}
   m_LocalScale: {x: 7.6817274, y: 7.6817346, z: -88.74055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -116,7 +116,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -140,4 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiosource: {fileID: 82000010287089150}
-  audioclip: {fileID: 8300000, guid: f7695585c4169234bbd4a8040567a6be, type: 3}
+  audioclip: {fileID: 8300000, guid: 61ad310fa435c6f4da2ce770b4693599, type: 3}
