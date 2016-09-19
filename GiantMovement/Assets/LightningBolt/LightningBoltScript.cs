@@ -40,15 +40,15 @@ namespace DigitalRuby.LightningBolt
     public class LightningBoltScript : MonoBehaviour
     {
         [Tooltip("The game object where the lightning will emit from. If null, StartPosition is used.")]
-        //public GameObject StartObject;
-        private GameObject StartObject;
+        public GameObject StartObject;
+        //private GameObject StartObject;
 
         [Tooltip("The start position where the lightning will emit from. This is in world space if StartObject is null, otherwise this is offset from StartObject position.")]
         public Vector3 StartPosition;
 
         [Tooltip("The game object where the lightning will end at. If null, EndPosition is used.")]
-        //public GameObject EndObject;
-        private GameObject EndObject;
+        public GameObject EndObject;
+        //private GameObject EndObject;
 
         [Tooltip("The end position where the lightning will end at. This is in world space if EndObject is null, otherwise this is offset from EndObject position.")]
         public Vector3 EndPosition;
@@ -285,8 +285,15 @@ namespace DigitalRuby.LightningBolt
             lineRenderer.SetVertexCount(0);
             UpdateFromMaterialChange();
 
-            StartObject = transform.parent.gameObject;
-            EndObject = GameObject.FindGameObjectWithTag("Giant");
+            if (StartObject == null)
+            {
+                StartObject = transform.parent.gameObject;
+            }
+            if (EndObject == null)
+            { 
+                EndObject = GameObject.FindGameObjectWithTag("Giant");
+            }
+
         }
 
         private void Update()
