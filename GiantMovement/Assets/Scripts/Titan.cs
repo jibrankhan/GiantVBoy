@@ -120,7 +120,7 @@ public class Titan : Agent {
                 if (damageTaken == finalDamageResist)
                 {
                     print("YOU WIN!");
-                    SceneManager.LoadScene(GlobalVariables.END_SCENE_NAME);
+                    SceneManager.LoadScene("YouWinPage");
                 }
             } 
         }
@@ -178,6 +178,6 @@ public class Titan : Agent {
     public void TitanKillsBoy()
     {
         // Both agents stop and giant plays animation
-        SceneManager.LoadScene("Staging");
+        SceneManager.LoadScene("YouLosePage");
     }
 }

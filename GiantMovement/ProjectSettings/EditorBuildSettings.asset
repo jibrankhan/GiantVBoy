@@ -13,3 +13,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Staging.unity
   - enabled: 1
     path: Assets/Scenes/StoryPage.unity
+  - enabled: 1
+    path: Assets/Scenes/YouWinPage.unity
+  - enabled: 1
+    path: Assets/Scenes/YouLosePage.unity

@@ -17,4 +17,5 @@
     public const string END_SCENE_NAME = "EndPage";
     public const string MAIN_SCENE_NAME = "Staging";
     public const string RUIN = "Ruin";
+    public const string YOU_WIN_NAME = "YouWinPage";
 }
