@@ -225,7 +225,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010699857924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1155.5801, y: 9.998169, z: 240.9638}
+  m_LocalPosition: {x: 1311.9772, y: 9.998169, z: 243.3265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb4d413de9f1d541915329635c9f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPosition: {x: 0, y: 40, z: 1}
+  StartPosition: {x: 0, y: 70, z: 1}
   EndPosition: {x: 0, y: -50, z: 0}
   Generations: 2
   Duration: 0.03
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb4d413de9f1d541915329635c9f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPosition: {x: -1, y: 40, z: 0}
+  StartPosition: {x: -1, y: 70, z: 0}
   EndPosition: {x: 0, y: 50, z: 0}
   Generations: 3
   Duration: 0.03
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb4d413de9f1d541915329635c9f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPosition: {x: 1, y: 40, z: 1}
+  StartPosition: {x: 1, y: 70, z: 1}
   EndPosition: {x: 0, y: -30, z: 5}
   Generations: 2
   Duration: 0.03
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb4d413de9f1d541915329635c9f2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPosition: {x: 1, y: 40, z: 0}
+  StartPosition: {x: 1, y: 70, z: 0}
   EndPosition: {x: 0, y: -40, z: 10}
   Generations: 2
   Duration: 0.03
@@ -558,8 +558,8 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions: []
   m_Parameters:
-    startWidth: 3
-    endWidth: 1
+    startWidth: 5
+    endWidth: 2.5
     m_StartColor:
       serializedVersion: 2
       rgba: 4294954708
@@ -598,8 +598,8 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions: []
   m_Parameters:
-    startWidth: 5
-    endWidth: 2
+    startWidth: 10
+    endWidth: 5
     m_StartColor:
       serializedVersion: 2
       rgba: 4294954708
@@ -638,8 +638,8 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions: []
   m_Parameters:
-    startWidth: 1
-    endWidth: 0.5
+    startWidth: 6
+    endWidth: 3
     m_StartColor:
       serializedVersion: 2
       rgba: 4294954708
@@ -678,8 +678,8 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions: []
   m_Parameters:
-    startWidth: 1
-    endWidth: 1
+    startWidth: 2
+    endWidth: 2
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295

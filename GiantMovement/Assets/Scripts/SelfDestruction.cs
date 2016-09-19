@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SelfDestruction : MonoBehaviour {
 
-    public int timer = 10000;
+    public int timer = 24;
 
 	// Use this for initialization
 	void Start () {
