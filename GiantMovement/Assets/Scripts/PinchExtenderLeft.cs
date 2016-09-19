@@ -3,18 +3,21 @@ using System.Collections;
 
 public class PinchExtenderLeft : Extender
 {
+    public Boy boy;
+    Rigidbody r;
+
     // Use this for initialization
     void Start()
     {
         // Collect clouds
         thunderClouds = FindObjectsOfType<ThunderCloud>();
         rainClouds = FindObjectsOfType<CloudCollision>();
+        ruins = FindObjectsOfType<Ruin>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // If stick then transform else do distance checks and snap
         if (stick)
         {
@@ -25,7 +28,25 @@ public class PinchExtenderLeft : Extender
                 stickObject.transform.position = transform.position;
                 //TransformObject(stickObject.transform.position, transform.position);
             }
+            else
+            {
+                print("IM HERE!");
+                print(stickObject.tag);
+                if(stickObject.tag == GlobalVariables.RUIN)
+                {
+                    print("THROWING!");
+                    print(speed);
+                    Rigidbody r = stickObject.GetComponent<Rigidbody>();
+
+                    // Allow to pass through extenders
+                    print("COLLISION IGNORED " + r.tag);
+                    Physics.IgnoreCollision(r.GetComponent<Collider>(), GetComponent<Collider>());
+
+                    r.AddForce(boy.transform.forward * speed * 20);
+                }
+            }
         }
+        // Attach object
         else
         {
             foreach (ThunderCloud t in thunderClouds)
@@ -56,14 +77,34 @@ public class PinchExtenderLeft : Extender
                     }
                 }
             }
+            foreach (Ruin r in ruins)
+            {
+                // If pinching in anyway, not cloud already set and distance under a position
+                if (IsPinchingLeft() && stickObject == null)
+                {
+                    if (Vector3.Distance(transform.position, r.transform.position) < snapRange)
+                    {
+                        stickObject = r.gameObject;
+                        stick = true;
+                        //TransformObject(stickObject.transform.position, transform.position);
+                        stickObject.transform.position = transform.position;
+                    }
+                }
+            }
         }
+    }
+
+    void FixedUpdate()
+    {
+        speed = (transform.position - lastPosition).magnitude;
+        lastPosition = transform.position;
     }
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
         // If touched by index finger
-        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD || other.tag == GlobalVariables.RUIN && IsPinchingLeft())
+        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD && IsPinchingLeft())
         {
             print("ENTER CLOUD");
             stick = true;
@@ -71,7 +112,6 @@ public class PinchExtenderLeft : Extender
             {
                 stickObject = other.gameObject;
             }
-
             //Extender e = (Extender) other.gameObject;
 
             //transform.position = new Vector3 (5.0f, 5.0f, 5.0f);		
@@ -83,7 +123,19 @@ public class PinchExtenderLeft : Extender
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD || other.tag == GlobalVariables.RUIN)
+        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD)
+        {
+            print("EXIT CLOUD");
+            stick = false;
+            stickObject = null;
+            //transform.position = new Vector3 (5.0f, 5.0f, 5.0f);		
+            //print("The cloud has been touched");
+            //stickObject = other.gameObject;
+            //onStick = true;
+            //stickObject = null;
+        }
+
+        if (other.tag == GlobalVariables.CLOUDS || other.tag == GlobalVariables.THUNDER_CLOUD)
         {
             print("EXIT CLOUD");
             stick = false;

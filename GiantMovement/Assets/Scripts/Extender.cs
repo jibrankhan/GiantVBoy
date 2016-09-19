@@ -11,4 +11,7 @@ public class Extender : MonoBehaviour {
     protected bool stick;
     protected ThunderCloud[] thunderClouds;
     protected CloudCollision[] rainClouds;
+    protected Ruin[] ruins;
+    protected float speed;
+    protected Vector3 lastPosition = Vector3.zero;
 }
