@@ -29,6 +29,8 @@ public class Titan : Agent {
         agent = GetComponent<NavMeshAgent>();
         audio = GetComponent<AudioSource>();
         animator = GetComponentInChildren<Animator>();
+
+        StartCoroutine(TitanDies());
     }
 	
 	// Update is called once per frame
@@ -120,7 +122,8 @@ public class Titan : Agent {
                 if (damageTaken == finalDamageResist)
                 {
                     print("YOU WIN!");
-                    SceneManager.LoadScene(GlobalVariables.YOU_WIN_NAME);
+                    StartCoroutine(TitanDies());
+                    Invoke("YouWin", 5f);
                 }
             } 
         }
@@ -175,9 +178,24 @@ public class Titan : Agent {
         }
     }
 
+    public IEnumerator TitanDies()
+    {
+        print("TITAN DIES");
+        agent.Stop();
+        //animator.CrossFade(GlobalVariables.TRIGGER_TAKE_DAMAGE, 1);
+        animator.SetBool(GlobalVariables.TITAN_DIES, true);
+        yield return new WaitForSeconds(3);
+        
+    }
+
     public void TitanKillsBoy()
     {
         // Both agents stop and giant plays animation
         SceneManager.LoadScene("YouLosePage");
+    }
+
+    public void YouWin()
+    {
+        SceneManager.LoadScene(GlobalVariables.YOU_WIN_NAME);
     }
 }

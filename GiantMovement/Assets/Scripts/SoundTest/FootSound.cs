@@ -7,6 +7,7 @@ public class FootSound : MonoBehaviour
     public AudioClip otherClip;
     public AudioClip PoundClip;
     public AudioClip FlinchClip;
+    public AudioClip DeathClip;
     // Use this for initialization
     void Start()
     {
@@ -42,4 +43,15 @@ public class FootSound : MonoBehaviour
         audiosource.clip = FlinchClip;
         audiosource.Play();
     }
+
+    public void PlayDeath()
+    {
+        audiosource = GetComponent<AudioSource>();
+        audiosource.clip = DeathClip;
+        audiosource.Play();
+
+
+    }
+
+
 }

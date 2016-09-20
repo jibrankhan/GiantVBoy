@@ -20,4 +20,5 @@
     public const string YOU_WIN_NAME = "YouWinPage";
     public const string EFFECT = "Effect";
     public const string BOY = "Boy";
+    public const string TITAN_DIES = "YouWin";
 }
