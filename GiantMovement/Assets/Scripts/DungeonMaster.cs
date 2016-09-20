@@ -35,13 +35,6 @@ public class DungeonMaster : MonoBehaviour
         GameState = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
     void OnGUI()
     {
         if (GameState == -1)
