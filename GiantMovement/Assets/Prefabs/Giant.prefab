@@ -412,6 +412,8 @@ GameObject:
   - 95: {fileID: 95000013141541516}
   - 82: {fileID: 82000011023946986}
   - 114: {fileID: 114000013846266070}
+  - 82: {fileID: 82000011073247432}
+  - 114: {fileID: 114000011098908628}
   m_Layer: 0
   m_Name: Giant-04-Walk
   m_TagString: Untagged
@@ -1978,6 +1980,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82000011073247432
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011685069650}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82000012667387030
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2069,6 +2145,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011098908628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011685069650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0961afaf585d9164693dcb2662d845e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosource: {fileID: 82000011073247432}
+  otherClip: {fileID: 8300000, guid: ae649573745c2b44eb46815109f2b7b7, type: 3}
+  PoundClip: {fileID: 0}
+  FlinchClip: {fileID: 0}
 --- !u!114 &114000011386859574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2087,7 +2178,6 @@ MonoBehaviour:
   dungeon: {fileID: 0}
   finalDamageResist: 3
   loseDistance: 60
-  giantRiverResetSpeed: 4
   giantMaxSpeed: 12
   giantAccelator: 1.000001
 --- !u!114 &114000013846266070
@@ -2103,6 +2193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audiosource: {fileID: 82000011023946986}
   otherClip: {fileID: 8300000, guid: ae649573745c2b44eb46815109f2b7b7, type: 3}
+  PoundClip: {fileID: 0}
+  FlinchClip: {fileID: 0}
 --- !u!137 &137000013448107726
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

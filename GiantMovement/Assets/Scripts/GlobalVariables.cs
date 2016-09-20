@@ -19,4 +19,5 @@
     public const string RUIN = "Ruin";
     public const string YOU_WIN_NAME = "YouWinPage";
     public const string EFFECT = "Effect";
+    public const string BOY = "Boy";
 }
